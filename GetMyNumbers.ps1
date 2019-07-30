@@ -1,6 +1,17 @@
+##### Kieron Palmer July 2019#############################
+##### Update the five variables below with your own file paths and initials.
+##################################################################
+##################################################################
 $file="C:\temp\GetMyNumbers\terg.csv"
 $Initial1="KJP"
-$Initial2="KP"
+$Initial2="KP"  # If you only have one intitial enter the same one twice
+$path="C:\temp\GetMyNumbers\output"
+$pdf="C:\temp\GetMyNumbers\pdf.pdf"
+###############################################################################
+
+
+
+
 $data = import-csv $file | where-object {$_.processor_initials -Match $initial1 -or $_.ringer_initials -match $initial1 -or $_.processor_initials -Match $initial2 -or $_.ringer_initials -match $initial2}
 
 
@@ -33,8 +44,7 @@ $Worksheet.Cells.Item(1,5) = 'Total'
 function Save-Spreadsheet
 {
 $excel.DisplayAlerts = $False # suppress overwrite alert
-$path="C:\temp\GetMyNumbers\output"
-$pdf="C:\temp\GetMyNumbers\pdf.pdf"
+
 
 $workbook.ExportAsFixedFormat($xlFixedFormat::xlTypePDF, $pdf)
 $workbook.SaveAs($path) 
