@@ -3,7 +3,6 @@ Calculates a ringers totals in the style of the old IPMR report, uses data expor
 
 This script does not filter on dates, this will need to be done when exporting the data
 
-Kieron Palmer
 
 ## Instructions
 
